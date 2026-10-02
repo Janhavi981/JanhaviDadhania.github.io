@@ -1,0 +1,27 @@
+---
+title: "Bismuth"
+date: 2026-10-02
+tags: [bismuth, agents, architecture]
+summary: "What Bismuth is, how it's architected, the tools it uses, and where the code lives."
+draft: false
+meta:
+  is_finished: true
+  opinion_strength: 1
+  evidence_strength: 9
+---
+
+Bismuth is my AI memory and agent system. It receives my voice notes, text, images, and links, files everything into a markdown memory tree, and delegates all actual work to disposable workers that it spins up and discards.
+
+## Architecture
+
+The architecture diagram is here: [architecture_diagram.html](https://github.com/JanhaviDadhania/bismuth/blob/release/v2/docs/architecture_diagram.html). It's an interactive HTML file — zoom, pan, click-to-expand — covering the system from high level down to concrete numbers, like the session auto-reset threshold. GitHub's blob view only shows the source, not a live render, so open or download the file directly to see it work.
+
+## Tools
+
+- **robotio** — CLI hardware abstraction for a small chatbot robot — LCD face, servo hand, webcam, mic, speaker.
+- **silicon-browser** — Stealth-first, terminal-native headless browser automation CLI for AI agents (navigate, snapshot, click, type, screenshot).
+- **session2html** — Renders a Claude Code .jsonl session transcript into a standalone pretty-printed HTML page containing only the human prompts and Claude's text replies.
+
+## Repository
+
+Code: [github.com/JanhaviDadhania/bismuth](https://github.com/JanhaviDadhania/bismuth)
