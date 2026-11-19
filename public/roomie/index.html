@@ -621,7 +621,7 @@
           <div class="hero-pills">
             <div class="stat-box">
               <small>Monthly Rent</small>
-              <strong>₹30,000</strong>
+              <strong>₹35,000</strong>
             </div>
             <div class="stat-box">
               <small>Security Deposit</small>
@@ -787,7 +787,6 @@
     <div class="wrap">
       <div class="dm-box">
         <span class="sticker" style="margin-bottom:16px;">⏳ Finalizing in the next 10 days</span>
-        <h2>Want to see it on a <span class="serif-italic">5-min video call?</span></h2>
         <p>Tap what describes you best (it pre-fills your message so you don’t even have to think about what to type):</p>
 
         <div class="vibe-picker" id="vibePicker">
@@ -798,11 +797,10 @@
         </div>
 
         <div class="dm-actions">
-          <!-- REPLACE 91XXXXXXXXXX WITH YOUR 10-DIGIT WHATSAPP NUMBER (KEEP 91) -->
-          <a id="waLink" class="dm-btn wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Janhavi!%20Saw%20your%20IG%20ad%20for%20the%20Utopia%20room.%20I'm%20working%20remotely%20and%20would%20love%20a%20quick%20tour!" target="_blank" rel="noopener">
-            💬 WhatsApp Janhavi
+          <a id="waLink" class="dm-btn wa" href="https://wa.me/917016441970?text=Hi%20Janhavi!%20Saw%20your%20IG%20ad%20for%20the%20Utopia%20room.%20I'm%20working%20remotely%20and%20would%20love%20a%20quick%20tour!" target="_blank" rel="noopener">
+            💬 WhatsApp 70164 41970
           </a>
-          <a class="dm-btn ig" href="https://www.instagram.com/janhavidadhania_/" target="_blank" rel="noopener">
+          <a class="dm-btn ig" href="https://ig.me/m/janhavidadhania_" target="_blank" rel="noopener">
             📸 DM @janhavidadhania_
           </a>
         </div>
@@ -824,19 +822,24 @@
     }
 
     // 1-Tap WhatsApp Icebreaker
-    const WHATSAPP_NUMBER = "91XXXXXXXXXX"; // <-- Put your number here too!
+    const WHATSAPP_NUMBER = "917016441970";
     const chips = document.querySelectorAll('.pick-chip');
     const waLink = document.getElementById('waLink');
+
+    function updateWaLink(chip) {
+      const intro = chip.getAttribute('data-msg');
+      const text = encodeURIComponent(`Hi Janhavi! Saw your IG ad for the Utopia room. ${intro} and would love a quick 5-min tour!`);
+      waLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
 
     chips.forEach(chip => {
       chip.addEventListener('click', () => {
         chips.forEach(c => c.classList.remove('selected'));
         chip.classList.add('selected');
-        const intro = chip.getAttribute('data-msg');
-        const text = encodeURIComponent(`Hi Janhavi! Saw your IG ad for the Utopia room. ${intro} and would love a quick 5-min tour!`);
-        waLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+        updateWaLink(chip);
       });
     });
+    updateWaLink(document.querySelector('.pick-chip.selected'));
   </script>
 </body>
 </html>
