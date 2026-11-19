@@ -427,7 +427,8 @@
       padding: 0;
       overflow: hidden;
       position: relative;
-      min-height: 260px;
+      min-height: 0;
+      aspect-ratio: 4 / 3;
     }
 
     .bento-tile.photo-tile img {
@@ -471,7 +472,8 @@
       color: var(--muted);
     }
 
-    .hero-bento { margin-top: 36px; }
+    .hero-bento { margin-top: 36px; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .hero-bento .photo-tile.span-2 { grid-column: span 2; }
 
     /* Vibe Check + About Janhavi */
     .vibe-grid {
@@ -653,37 +655,13 @@
       </div>
 
       <div class="bento-grid hero-bento">
-        <div class="bento-tile sun">
-          <div>
-            <span class="bento-icon">🏊‍♀️</span>
-            <h3>Pool</h3>
-            <p>Resort-style swimming pool &amp; clubhouse right inside the gates for morning laps or weekend resets.</p>
-          </div>
-        </div>
-
-        <div class="bento-tile deep">
-          <div>
-            <span class="bento-icon">🌿</span>
-            <h3>Canopy Garden</h3>
-            <p>Lush tree-lined canopy gardens and quiet corners to read, take calls, or sip your morning coffee.</p>
-          </div>
-        </div>
-
-        <div class="bento-tile warm">
-          <div>
-            <span class="bento-icon">🎾</span>
-            <h3>Every Game Zone</h3>
-            <p>TT, badminton, tennis, volleyball, football, basketball and many more game zones + gym.</p>
-          </div>
-        </div>
-
-        <div class="bento-tile">
-          <div>
-            <span class="bento-icon">🚶‍♀️</span>
-            <h3>Maintained Walkable Common Spaces &amp; Roads</h3>
-            <p>Wide, clean, well-maintained roads for late-night walks, plus an in-campus shopping center for daily essentials.</p>
-          </div>
-        </div>
+        <div class="bento-tile photo-tile span-2"><img src="new1.jpg" alt="Township view" loading="lazy" /></div>
+        <div class="bento-tile photo-tile"><img src="new2.jpg" alt="Towers lit up at night" loading="lazy" /></div>
+        <div class="bento-tile photo-tile"><img src="new3.jpg" alt="Township view" loading="lazy" /></div>
+        <div class="bento-tile photo-tile"><img src="new4.jpg" alt="Township view" loading="lazy" /></div>
+        <div class="bento-tile photo-tile"><img src="new5.jpg" alt="Township view" loading="lazy" /></div>
+        <div class="bento-tile photo-tile"><img src="new6.jpg" alt="Clubhouse and shopping arcade at dusk" loading="lazy" /></div>
+        <div class="bento-tile photo-tile"><img src="new7.jpg" alt="Township view" loading="lazy" /></div>
       </div>
     </div>
   </header>
