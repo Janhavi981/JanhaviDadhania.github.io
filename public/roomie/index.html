@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Move to Bangalore. Pay ₹0 Deposit. — Utopia 2BHK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #FBF5E9;
+      --butter: #F7D372;
+      --forest: #173326;
+      --forest-light: #234A38;
+      --terra: #D95A36;
+      --blush: #F6DDD3;
+      --ink: #1A1613;
+      --muted: #544D46;
+      --border: 2px solid #1A1613;
+      --shadow: 5px 5px 0px #1A1613;
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+    }
+
+    .serif-italic {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Collage */
+    .hero {
+      padding: 32px 0 56px;
+    }
+
+    .hero-top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .sticker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--butter);
+      border: var(--border);
+      box-shadow: 3px 3px 0 #1A1613;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .sticker.terra {
+      background: var(--terra);
+      color: #fff;
+      transform: rotate(-1.5deg);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6.2vw, 4.4rem);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 .highlight {
+      background: var(--butter);
+      padding: 0 10px;
+      border-radius: 10px;
+      display: inline-block;
+      transform: rotate(-1deg);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 26px;
+    }
+
+    .hero-pills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 490px;
+    }
+
+    .stat-box {
+      background: #fff;
+      border: var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 3px 3px 0 #1A1613;
+    }
+
+    .stat-box small {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .stat-box strong {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.2;
+      display: block;
+    }
+
+    .stat-box.wide {
+      grid-column: span 2;
+      background: var(--blush);
+    }
+
+    /* Scrapbook Hero Photos */
+    .hero-collage {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 14px;
+      align-items: end;
+    }
+
+    .polaroid {
+      background: #fff;
+      border: var(--border);
+      border-radius: 16px;
+      padding: 10px 10px 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .polaroid img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+      border: 1.5px solid #1A1613;
+    }
+
+    .polaroid.tall img { aspect-ratio: 3 / 4; }
+    .polaroid.square img { aspect-ratio: 4 / 5; }
+
+    .polaroid span {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--ink);
+    }
+
+    .polaroid.tilt-left { transform: rotate(-1.5deg); }
+    .polaroid.tilt-right { transform: rotate(1.8deg); margin-bottom: 18px; }
+
+    /* Section Headers */
+    section.pad {
+      padding: 56px 0;
+      border-top: var(--border);
+    }
+
+    .sec-kicker {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--terra);
+      margin-bottom: 8px;
+    }
+
+    .sec-title {
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      margin-bottom: 14px;
+    }
+
+    .sec-lead {
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    /* Flat Tour Grid with Vision/Raw Toggle */
+    .tour-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .room-card {
+      background: #fff;
+      border: var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .room-media {
+      position: relative;
+      background: #eee;
+    }
+
+    .room-media img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+    }
+
+    .view-switch {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: inline-flex;
+      background: rgba(251, 245, 233, 0.95);
+      border: var(--border);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 3px;
+    }
+
+    .view-switch button {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .view-switch button.active {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .room-body {
+      padding: 18px 20px 22px;
+    }
+
+    .room-body h3 {
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+
+    .room-body p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Balcony Video + Floorplan Row */
+    .reel-plan-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 24px;
+      align-items: stretch;
+    }
+
+    .reel-card {
+      background: var(--forest);
+      color: #fff;
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .reel-card video {
+      width: 100%;
+      max-height: 460px;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 2px solid var(--butter);
+      background: #000;
+    }
+
+    .reel-card p {
+      font-size: 0.88rem;
+      color: #D7E5DC;
+    }
+
+    .plan-card {
+      background: #fff;
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .plan-card img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1.5px solid #E5DDD0;
+    }
+
+    .plan-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .mini-tag {
+      background: var(--blush);
+      border: 1.5px solid #1A1613;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* Compact "Why This Deal Is Rare" Strip */
+    .rare-strip {
+      background: var(--forest);
+      color: var(--cream);
+      padding: 36px 0;
+      border-top: var(--border);
+    }
+
+    .rare-inner {
+      display: grid;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .rare-inner h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      margin-bottom: 6px;
+    }
+
+    .rare-inner p {
+      color: #CFE0D6;
+      font-size: 0.95rem;
+    }
+
+    .rare-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rare-pill {
+      background: var(--butter);
+      color: var(--ink);
+      border: var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      box-shadow: 3px 3px 0 var(--terra);
+    }
+
+    .rare-pill.strike {
+      background: var(--forest-light);
+      color: #A9C2B4;
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: none;
+      text-decoration: line-through;
+    }
+
+    /* Combined Township Bento */
+    .bento-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .bento-tile {
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 4px 4px 0 #1A1613;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bento-tile.photo-tile {
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+      min-height: 260px;
+    }
+
+    .bento-tile.photo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-overlay {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      background: rgba(251, 245, 233, 0.95);
+      border: var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .bento-tile.warm { background: var(--blush); }
+    .bento-tile.sun { background: var(--butter); }
+    .bento-tile.deep { background: var(--forest); color: #fff; }
+    .bento-tile.deep p { color: #CFE0D6; }
+
+    .bento-icon {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .bento-tile h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .bento-tile p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Vibe Check + About Janhavi */
+    .vibe-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .vibe-card {
+      background: #fff;
+      border: var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .vibe-card.blush { background: var(--blush); }
+
+    .vibe-list {
+      list-style: none;
+      margin-top: 16px;
+      display: grid;
+      gap: 12px;
+      font-size: 0.96rem;
+    }
+
+    .vibe-list li strong { color: var(--ink); }
+
+    /* Interactive 1-Tap DM Box */
+    .dm-section {
+      padding: 64px 0 76px;
+      background: var(--butter);
+      border-top: var(--border);
+    }
+
+    .dm-box {
+      background: #fff;
+      border: var(--border);
+      border-radius: 24px;
+      padding: 32px 24px;
+      box-shadow: 8px 8px 0 #1A1613;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .dm-box h2 {
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+      margin-bottom: 10px;
+    }
+
+    .dm-box p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 22px;
+    }
+
+    .vibe-picker {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .pick-chip {
+      border: var(--border);
+      background: var(--cream);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+
+    .pick-chip.selected {
+      background: var(--terra);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .dm-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .dm-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 26px;
+      border-radius: 14px;
+      border: var(--border);
+      font-weight: 700;
+      font-size: 0.98rem;
+      box-shadow: 4px 4px 0 #1A1613;
+      transition: transform 0.15s ease;
+    }
+
+    .dm-btn:hover { transform: translate(-2px, -2px); }
+    .dm-btn.wa { background: var(--forest); color: #fff; }
+    .dm-btn.ig { background: var(--blush); color: var(--ink); }
+
+    footer {
+      background: #1A1613;
+      color: #CFC6BA;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 780px) {
+      .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 40px; }
+      .tour-grid { grid-template-columns: 1fr 1fr; }
+      .reel-plan-grid { grid-template-columns: 0.72fr 1.28fr; }
+      .rare-inner { grid-template-columns: 1fr 1.2fr; }
+      .bento-grid { grid-template-columns: repeat(3, 1fr); }
+      .bento-tile.span-2 { grid-column: span 2; }
+      .vibe-grid { grid-template-columns: 1.05fr 0.95fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-top-meta">
+        <span class="sticker">📍 Brigade Cornerstone, 47-acre township</span>
+        <span class="sticker terra">⚡ Filling this room in 10 days</span>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>
+            Move to Bangalore for 4–5 months. <span class="serif-italic">Pay</span> <span class="highlight">₹0 deposit.</span>
+          </h1>
+          <p class="hero-sub">
+            Skip the ₹1.5L deposit, broker drama, and hunting for a maid. I’m renting out one private room in my sunlit 2BHK inside a 47-acre green township. Just bring your laptop and a suitcase.
+          </p>
+
+          <div class="hero-pills">
+            <div class="stat-box">
+              <small>Monthly Rent</small>
+              <strong>₹30,000</strong>
+            </div>
+            <div class="stat-box">
+              <small>Security Deposit</small>
+              <strong>₹0 (Seriously)</strong>
+            </div>
+            <div class="stat-box">
+              <small>Who</small>
+              <strong>Female Flatmate</strong>
+            </div>
+            <div class="stat-box">
+              <small>Stay Duration</small>
+              <strong>4–5 Months</strong>
+            </div>
+            <div class="stat-box wide">
+              <small>House Chores &amp; Food</small>
+              <strong>We have great house help &amp; chef :)</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-collage">
+          <div class="polaroid tall tilt-left">
+            <img src="bedroom-styled.jpg" alt="Your sunlit private bedroom" />
+            <span>Your sunlit room ✨</span>
+          </div>
+          <div class="polaroid square tilt-right">
+            <img src="a1.jpg" alt="Brigade Cornerstone Utopia evening courtyard" />
+            <span>Right downstairs 🌙</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: FULL FLAT TOUR -->
+  <section class="pad" id="tour">
+    <div class="wrap">
+      <span class="sec-kicker">01 · See Everything Right Here</span>
+      <h2 class="sec-title">Inside the 2BHK <span class="serif-italic">(zero catfishing).</span></h2>
+      <p class="sec-lead">
+        Toggle between the <strong>Styled Vision</strong> (what I’m setting up right now) and the <strong>Raw Empty Space</strong> (clicked while the previous tenant was packing out).
+      </p>
+
+      <div class="tour-grid">
+        <!-- Bedroom with interactive toggle -->
+        <article class="room-card">
+          <div class="room-media">
+            <img id="bed-img" src="bedroom-styled.jpg" alt="Private bedroom" />
+            <div class="view-switch">
+              <button class="active" onclick="swapImg('bed-img', 'bedroom-styled.jpg', this)">✨ Styled Vision</button>
+              <button onclick="swapImg('bed-img', 'a7.jpg', this)">📷 Raw Space</button>
+            </div>
+          </div>
+          <div class="room-body">
+            <h3>Your Private Bedroom</h3>
+            <p>Full-height window for gorgeous natural light, built-in navy wardrobe, ceiling fan, and plenty of room for a queen bed + work desk setup.</p>
+          </div>
+        </article>
+
+        <!-- Living Room with interactive toggle -->
+        <article class="room-card">
+          <div class="room-media">
+            <img id="living-img" src="living-styled.jpg" alt="Living room" />
+            <div class="view-switch">
+              <button class="active" onclick="swapImg('living-img', 'living-styled.jpg', this)">✨ Styled Vision</button>
+              <button onclick="swapImg('living-img', 'a8.jpg', this)">📷 Raw Space</button>
+            </div>
+          </div>
+          <div class="room-body">
+            <h3>The Living &amp; Dining Lounge</h3>
+            <p>Bright, breezy common space I’m furnishing with cozy seating, warm lamps, and plants—perfect for work-from-sofa days or late-night chai.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Balcony Video + Floorplan -->
+      <div class="reel-plan-grid">
+        <div class="reel-card">
+          <video autoplay muted loop playsinline controls poster="a1.jpg">
+            <source src="a2.mp4" type="video/mp4" />
+          </video>
+          <div>
+            <h3>Your Evening Balcony View</h3>
+            <p>Actual clip stepping out onto our balcony at night—fairy-lit gardens, cool Bangalore breeze, zero traffic noise.</p>
+          </div>
+        </div>
+
+        <div class="plan-card">
+          <div>
+            <span class="sec-kicker">The Layout</span>
+            <h3 style="font-size:1.5rem; margin-bottom:10px;">Proper privacy in a spacious 2BHK</h3>
+            <p style="font-size:0.92rem; color:var(--muted); margin-bottom:16px;">
+              Bedrooms sit on opposite sides of the living &amp; dining room—so you get real quiet when you’re on calls, writing, or sleeping in.
+            </p>
+          </div>
+          <img src="2-bhk-large-t2a copy.jpg" alt="2BHK Apartment Floor Plan" />
+          <div class="plan-tags">
+            <span class="mini-tag">2 Separate Bedrooms</span>
+            <span class="mini-tag">2 Full Washrooms</span>
+            <span class="mini-tag">8'9" × 5'0" Balcony</span>
+            <span class="mini-tag">Dedicated Utility Area</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPACT "WHY THIS DEAL IS RARE" STRIP -->
+  <section class="rare-strip">
+    <div class="wrap rare-inner">
+      <div>
+        <h2>Why this deal is rare in Bangalore</h2>
+        <p>Short stays usually mean losing ₹1.5L to deposits or settling for cramped PGs.</p>
+      </div>
+      <div class="rare-pills">
+        <span class="rare-pill strike">₹1.5L Deposit &amp; Brokerage</span>
+        <span class="rare-pill strike">11-Month Lock-In</span>
+        <span class="rare-pill">✓ ₹0 Deposit · 4–5 Mo Welcome</span>
+        <span class="rare-pill">✓ Wi-Fi, Maintenance, Maid &amp; Chef Sorted</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: COMBINED TOWNSHIP BENTO -->
+  <section class="pad" id="township">
+    <div class="wrap">
+      <span class="sec-kicker">02 · Inside the 47-Acre Township</span>
+      <h2 class="sec-title">Everything you need, <span class="serif-italic">right downstairs.</span></h2>
+      <p class="sec-lead">
+        Located on Varthur Main Road (Whitefield side) — safe, lush, and built so you barely have to fight Bangalore traffic.
+      </p>
+
+      <div class="bento-grid">
+        <div class="bento-tile photo-tile span-2">
+          <img src="a1.jpg" alt="Brigade Cornerstone Utopia courtyard and walkways at night" />
+          <div class="photo-overlay">🌙 Right downstairs — safe, lit-up, peaceful evening vibe</div>
+        </div>
+
+        <div class="bento-tile sun">
+          <div>
+            <span class="bento-icon">🏊‍♀️</span>
+            <h3>Pool</h3>
+            <p>Resort-style swimming pool &amp; clubhouse right inside the gates for morning laps or weekend resets.</p>
+          </div>
+        </div>
+
+        <div class="bento-tile deep">
+          <div>
+            <span class="bento-icon">🌿</span>
+            <h3>Canopy Garden</h3>
+            <p>Lush tree-lined canopy gardens and quiet corners to read, take calls, or sip your morning coffee.</p>
+          </div>
+        </div>
+
+        <div class="bento-tile warm">
+          <div>
+            <span class="bento-icon">🎾</span>
+            <h3>Every Game Zone</h3>
+            <p>TT, badminton, tennis, volleyball, football, basketball and many more game zones + gym.</p>
+          </div>
+        </div>
+
+        <div class="bento-tile">
+          <div>
+            <span class="bento-icon">🚶‍♀️</span>
+            <h3>Maintained Walkable Common Spaces &amp; Roads</h3>
+            <p>Wide, clean, well-maintained roads for late-night walks, plus an in-campus shopping center for daily essentials.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: VIBE CHECK + ABOUT JANHAVI -->
+  <section class="pad">
+    <div class="wrap vibe-grid">
+      <div class="vibe-card">
+        <span class="sec-kicker">03 · Vibe Check</span>
+        <h2 style="font-size:2rem;">You’ll love living here if…</h2>
+        <ul class="vibe-list">
+          <li>💻 <strong>You’re building or working remotely</strong> — startup founder, remote tech/design role, writer, or consultant.</li>
+          <li>🗓️ <strong>You’re in Bangalore for 4–5 months</strong> and want an aesthetic, safe, peaceful base on the Whitefield–Varthur side.</li>
+          <li>🪴 <strong>You appreciate a pretty, tidy home</strong> without the passive-aggressive flatmate energy.</li>
+          <li>🎧 <strong>You love both privacy &amp; good chats</strong> — headphones on when working, evening walks or chai when you’re free.</li>
+        </ul>
+      </div>
+
+      <div class="vibe-card blush">
+        <span class="sec-kicker">04 · Your Flatmate</span>
+        <h2 style="font-size:2rem; margin-bottom:14px;">Hey, I’m Janhavi 👋</h2>
+        <p style="font-size:0.98rem; color:var(--ink); margin-bottom:14px;">
+          I live in the other room and am turning this 2BHK into a warm, sunlit, inspiring home. We have great house help and a chef, and I’m managing Wi-Fi and maintenance so neither of us wastes weekends on household admin.
+        </p>
+        <p style="font-size:0.95rem; color:var(--muted);">
+          I want to find someone genuinely cool in the next 10 days. Creep my Instagram first if you want to check my vibe—zero awkwardness!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: 1-TAP DM BOX -->
+  <section class="dm-section" id="dm-me">
+    <div class="wrap">
+      <div class="dm-box">
+        <span class="sticker" style="margin-bottom:16px;">⏳ Finalizing in the next 10 days</span>
+        <h2>Want to see it on a <span class="serif-italic">5-min video call?</span></h2>
+        <p>Tap what describes you best (it pre-fills your message so you don’t even have to think about what to type):</p>
+
+        <div class="vibe-picker" id="vibePicker">
+          <button class="pick-chip selected" data-msg="I'm working remotely">💻 Remote Worker</button>
+          <button class="pick-chip" data-msg="I'm building a startup">🚀 Startup Founder</button>
+          <button class="pick-chip" data-msg="I'm a writer / creative">✍️ Writer / Creative</button>
+          <button class="pick-chip" data-msg="I'm in Bangalore for 4–5 months">🧳 Short-Stay Girlie</button>
+        </div>
+
+        <div class="dm-actions">
+          <!-- REPLACE 91XXXXXXXXXX WITH YOUR 10-DIGIT WHATSAPP NUMBER (KEEP 91) -->
+          <a id="waLink" class="dm-btn wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Janhavi!%20Saw%20your%20IG%20ad%20for%20the%20Utopia%20room.%20I'm%20working%20remotely%20and%20would%20love%20a%20quick%20tour!" target="_blank" rel="noopener">
+            💬 WhatsApp Janhavi
+          </a>
+          <a class="dm-btn ig" href="https://www.instagram.com/janhavidadhania_/" target="_blank" rel="noopener">
+            📸 DM @janhavidadhania_
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Brigade Cornerstone Utopia · Varthur Main Road, Whitefield, Bengaluru · Female Flatmate Only
+  </footer>
+
+  <script>
+    // Toggle between Styled Vision and Raw Space
+    function swapImg(imgId, newSrc, btn) {
+      document.getElementById(imgId).src = newSrc;
+      const buttons = btn.parentElement.querySelectorAll('button');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    // 1-Tap WhatsApp Icebreaker
+    const WHATSAPP_NUMBER = "91XXXXXXXXXX"; // <-- Put your number here too!
+    const chips = document.querySelectorAll('.pick-chip');
+    const waLink = document.getElementById('waLink');
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+        const intro = chip.getAttribute('data-msg');
+        const text = encodeURIComponent(`Hi Janhavi! Saw your IG ad for the Utopia room. ${intro} and would love a quick 5-min tour!`);
+        waLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+      });
+    });
+  </script>
+</body>
+</html>
